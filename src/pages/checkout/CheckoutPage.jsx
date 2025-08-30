@@ -23,9 +23,9 @@ export function CheckoutPage({ cart }) {
 
     return (
         <>
-            <CheckoutHeader />
-
             <title>Checkout</title>
+
+            <CheckoutHeader />
 
             <div className="checkout-page">
                 <div className="page-title">Review your order</div>
