@@ -8,12 +8,21 @@ export function HomePage({ cart }) {
 
   const [products, setProducts] = useState([]);
 
+  // useEffect(() => {
+  //   // axios.get('http://localhost:3000/api/products')
+  //   axios.get('/api/products')
+  //     .then((response) => {
+  //       setProducts(response.data);
+  //     });
+  // }, []);
+
+  // use async-await to get backend data
   useEffect(() => {
-    // axios.get('http://localhost:3000/api/products')
-    axios.get('/api/products')
-      .then((response) => {
-        setProducts(response.data);
-      });
+    const getHomeData = async () => {
+      const response = await axios.get('api/products');
+      setProducts(response.data);
+    };
+    getHomeData();
   }, []);
 
   return (
